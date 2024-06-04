@@ -1,13 +1,6 @@
 import './globals.css';
-
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs';
-
+import './reset.css'
+import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 
