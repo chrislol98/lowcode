@@ -2,6 +2,7 @@ import { columns } from './_components/columns';
 import { DataTable } from './_components/data-table';
 import AddDialog from './_components/add-dialog';
 import { getCanvasList } from '@/lib/queries';
+import { Separator } from '@/components/ui/separator';
 
 type Props = {
   params: { userId: string };
@@ -11,7 +12,7 @@ async function Canvas({ params: { userId } }: Props) {
   return (
     <div>
       <AddDialog userId={userId}></AddDialog>
-      <div className={'mb-4'}></div>
+      <Separator className="my-4" />
       <DataTable columns={columns} data={data} />
     </div>
   );

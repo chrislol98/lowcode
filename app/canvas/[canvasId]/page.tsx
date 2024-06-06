@@ -1,15 +1,13 @@
 import { cn } from '@/lib/utils';
-import Canvas from './canvas';
-import Header from './header';
-import Sidebar from './sidebar';
+import Canvas from './_components/canvas';
+import Header from './_components/header';
+import Sidebar from './_components/sidebar';
 const Page = async () => {
   return (
-    <div className={cn('h-full flex flex-col')}>
+    <div className={cn('h-full bg-background overflow-auto')}>
       <Header />
-      <div className={cn('flex flex-1')}>
-        <Canvas></Canvas>
-        <Sidebar></Sidebar>
-      </div>
+      <Canvas></Canvas>
+      <Sidebar></Sidebar>
     </div>
   );
 };
