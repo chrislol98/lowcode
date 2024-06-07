@@ -1,9 +1,25 @@
+import { Canvas } from '@prisma/client';
 type DeviceTypes = 'Desktop' | 'Mobile' | 'Tablet' | 'custom';
 
-type Canvas = {
-  id: number;
-  component: Component[];
-  device: DeviceTypes;
+type CanvasType = Omit<Canvas, 'components' | 'createdAt' | 'updatedAt'> & {
+  components: ElementType[] | Canvas['components'];
+} & { deviceType: DeviceTypes };
+
+type ElementType = {
+  id: string;
+  styles: React.CSSProperties;
+  children: ElementType[];
 };
 
-type Component = {};
+const initialCanvasState: CanvasType = {
+  id: '',
+  name: '',
+  userId: '',
+  components: [],
+  deviceType: 'Desktop',
+};
+
+const initialState = {
+  canvas: initialCanvasState,
+};
+
