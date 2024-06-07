@@ -13,20 +13,9 @@ import {
 } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
-
+import Components from './components';
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -37,22 +26,14 @@ const Sidebar = () => {
       <SheetContent className={cn('mt-[77px] w-[333px]')}>
         <Separator className="my-4"></Separator>
         <Tabs defaultValue="component">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid  grid-cols-2">
             <TabsTrigger value="component">组件</TabsTrigger>
             <TabsTrigger value="prop">属性</TabsTrigger>
           </TabsList>
           <TabsContent value="component">
-            <Card>
-              <CardContent>
-                <div>12</div>
-              </CardContent>
-            </Card>
+            <Components></Components>
           </TabsContent>
-          <TabsContent value="prop">
-            <Card>
-              <CardContent></CardContent>
-            </Card>
-          </TabsContent>
+          <TabsContent value="prop"></TabsContent>
         </Tabs>
       </SheetContent>
     </Sheet>
