@@ -29,6 +29,7 @@ model Canvas {
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
   components String?  @db.Text
+  deviceType String?  @default("Desktop")
   User       User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId     String?
 

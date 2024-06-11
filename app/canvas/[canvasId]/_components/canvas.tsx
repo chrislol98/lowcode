@@ -1,6 +1,8 @@
+'use client';
 import { cn } from '@/lib/utils';
-
-const Canvas: React.FC<{}> = async () => {
+import { useCanvasStore } from '@/stores/canvas-store';
+const Canvas: React.FC<{}> = () => {
+  // const text = useCanvasStore((state) => state.text);
   return (
     <div
       style={{ height: 'calc(100% - 77px)', width: 'calc(100% - 333px)' }}

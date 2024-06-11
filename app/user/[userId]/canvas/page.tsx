@@ -7,6 +7,7 @@ import { Separator } from '@/components/ui/separator';
 type Props = {
   params: { userId: string };
 };
+
 async function Canvas({ params: { userId } }: Props) {
   const data = await getCanvasList();
   return (

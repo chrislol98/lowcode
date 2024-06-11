@@ -55,3 +55,14 @@ export const getCanvasList = async () => {
   const canvases = await db.canvas.findMany();
   return canvases;
 };
+
+
+export const getCanvas = async (canvasId: string) => {
+  const canvas = await db.canvas.findUnique({
+    where: { id: canvasId },
+  });
+  if (!canvas) {
+    throw new Error(`Canvas with id ${canvasId} not found`);
+  }
+  return canvas;
+};
