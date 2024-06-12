@@ -14,8 +14,8 @@ import {
 import { cn } from '@/lib/utils';
 import { useState, useEffect, useRef } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { BreakpointDrag } from '@/components/canvas/breakpoint';
 import { Separator } from '@/components/ui/separator';
-import Components from './components';
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -31,7 +31,7 @@ const Sidebar = () => {
             <TabsTrigger value="prop">属性</TabsTrigger>
           </TabsList>
           <TabsContent value="component">
-            <Components></Components>
+            <BreakpointDrag></BreakpointDrag>
           </TabsContent>
           <TabsContent value="prop"></TabsContent>
         </Tabs>
